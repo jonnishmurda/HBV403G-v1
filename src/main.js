@@ -25,11 +25,14 @@ for (let i = 0; i < validData.length; i++) {
 
 document.querySelector('#app').innerHTML = `
   <main>
-    <header>
+    <header class="header">
       <h1>Verkefni 1</h1>
       </header>
-      <section class="questions">
-      <p>Velkomin/n á spurningalistasíðuna</p>
+      <section class="indexContent">
+      <div class="text">
+        <p>Velkomin/n á spurningalistasíðuna</p>
+        <p>Smelltu á flokk til að svara spurningum</p>
+      </div>
     <ul>
       ${html}
     </ul>
