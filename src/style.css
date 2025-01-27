@@ -7,7 +7,68 @@
   font-family: 'Poppins';
 }
 
-.questions ul li {
-  color: red;
-  text-decoration: none;
+.questions {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
+   & p {
+    font-size: large;
+    text-transform: uppercase;
+   }
+  & ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    & li {
+      background: #355aff;
+      border-radius: 10px;
+      width: 300px;
+      list-style-type: none;
+
+      & a {
+        z-index: 100;
+        color: #fff;
+        width: 300px;
+        padding: 1rem;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        position: relative;
+      }
+    }
+
+    & li::before {
+      z-index: 1;
+      position: absolute;
+      content: '';
+      background: #000000;
+      width: 0;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    & li:hover {
+      scale: 1.05;
+      transition: 0.3s;
+    }
+
+    & li:hover::before {
+      transition: 0.3s;
+      width: 100%;
+    }
+
+    & a:hover {
+      color: #355aff;
+      transition: 0.3s;
+    }
+  }
 }
