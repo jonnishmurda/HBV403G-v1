@@ -9,19 +9,27 @@ let html = ``;
  * aðstoð hjá GPT
  * 
  */
-const validData = data.filter(
-  (item) =>
-    item.title &&
-    typeof item.title === 'string' &&
-    item.file &&
-    typeof item.file === 'string' &&
-    /\.json$/.test(item.file) &&
-    /^[a-zA-Z0-9]+$/.test(item.title)
-);
 
-for (let i = 0; i < validData.length; i++) {
-  html += `<li><a href="/pages/${validData[i].file.replace('.json', '.html')}">${validData[i].title.toUpperCase()}</a></li>`;
+try {
+  const validData = data.filter(
+    (item) =>
+      item.title &&
+      typeof item.title === 'string' &&
+      item.file &&
+      typeof item.file === 'string' &&
+      /\.json$/.test(item.file) &&
+      /^[a-zA-Z0-9]+$/.test(item.title)
+  );
+
+  for (let i = 0; i < validData.length; i++) {
+    html += `<li><a href="/pages/${validData[i].file.replace('.json', '.html')}">${validData[i].title.toUpperCase()}</a></li>`;
+  }
+} catch {
+  console.error('Ekki tókst að sækja gögn');
+  html += `Gögn birtust ekki`;
 }
+
+let ld = ``
 
 document.querySelector('#app').innerHTML = `
   <main>
