@@ -1,4 +1,5 @@
 import './style.css'
+import './lib/category'
 import data from '../data/index.json'
 
 let html = ``;
@@ -7,7 +8,6 @@ let html = ``;
  * validData siktar út ógild gögn
  * leyfir ekki bókstafinn "ó" og því siktar það út gögnin
  * aðstoð hjá GPT
- * 
  */
 
 try {
