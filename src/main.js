@@ -1,5 +1,5 @@
 import './style.css'
-import './lib/category'
+import './lib/html.js'
 import data from '../data/index.json'
 
 let html = ``;

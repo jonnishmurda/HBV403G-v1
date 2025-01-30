@@ -1,12 +1,25 @@
-import data from '../../data/html.json'
+import data from '../../data/css.json'
 import '../style.css'
 
 let html = ``;
 
-let answerCheck = ``;
 
-function checkCorrect (e, isCorrect){
 
+function checkCorrect(e, isCorrect) {
+  const parent = e.target.closest('ul');
+  const buttons = parent.querySelectorAll('button');
+  buttons.forEach(button => button.disabled = true);
+
+  if (isCorrect) {
+    e.target.style.backgroundColor = 'green';
+    e.target.style.color = 'white'
+    e.target.style.boxShadow = '#000 5px 5px'
+  } else {
+    e.target.style.backgroundColor = 'red';
+    e.target.style.color = 'white'
+    e.target.style.boxShadow = '#000 5px 5px'
+
+  }
 }
 
 try {
@@ -19,7 +32,7 @@ try {
         ${obj.answers.map(answer => `
           <li>
             <button class="answer"
-            onClick="checkCorrect(e, ${answer.correct})">${transform(answer.answer)}</button>
+            onclick="checkCorrect(event, ${answer.correct})">${transform(answer.answer)}</button>
           </li>
         `).join('')}
       </ul>
@@ -28,7 +41,7 @@ try {
   }
 
 } catch {
-  console.error('Ekki tókst að sækja spurningar');
+  console.error('Ekki tókst að sækja allar spurningar');
 }
 
 // aðstoð frá GPT
@@ -48,7 +61,7 @@ document.querySelector('#app').innerHTML = `
       <h1>Verkefni 1</h1>
     </header>
     <div class="backBtn"><a href="/">Aftur á forsíðu</a></div>
-    <section class="htmlContent">
+    <section class="content">
         <h1>${data.title}</h1>
         <div class"quiz">
             ${html}
@@ -56,3 +69,5 @@ document.querySelector('#app').innerHTML = `
     </section>
   </main>
 `;
+
+window.checkCorrect = checkCorrect;

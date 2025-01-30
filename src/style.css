@@ -126,7 +126,8 @@
   }
 }
 
-.htmlContent {
+.content {
+  margin: 1rem 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,6 +172,23 @@
       & button:active {
         scale: 1;
         box-shadow: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .content {
+    & h3 {
+      text-align: center;
+    }
+
+    & ul {
+      & li {
+        & button {
+          width: 100%;
+          text-align: center;
+        }
       }
     }
   }
