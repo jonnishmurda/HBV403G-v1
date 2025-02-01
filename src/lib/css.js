@@ -63,6 +63,7 @@ const writeHtml = `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Verkefni 1" content="Verkefni 1 í vefforritun, spurningalistasíða um HTML, CSS og Javascript, ${data.title} spurningar">
     <title>${data.title} spurningar</title>
     <link rel="stylesheet" href="style.css">
     <script src="checkCorrect.js" defer></script>

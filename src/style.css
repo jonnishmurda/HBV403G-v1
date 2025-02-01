@@ -127,13 +127,17 @@
 }
 
 .content {
-  margin: 1rem 10rem;
+  margin: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
   gap: 1rem;
+
+  & .quiz {
+    padding: 1rem;
+  }
 
   & h1 {
     font-weight: var(--font-header);
@@ -156,7 +160,7 @@
         position: relative;
         padding: 0.5rem;
         border-radius: 10px;
-        width: 50%;
+        width: 60%;
         text-align: left;
         border: none;
         background: var(--color-main);
@@ -191,5 +195,8 @@
         }
       }
     }
+  }
+  .backBtn {
+    text-align: center;
   }
 }
