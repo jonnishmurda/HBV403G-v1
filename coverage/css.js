@@ -1,8 +1,7 @@
-import data from '../../data/css.json'
+import data from '../data/css.json'
 import '../style.css'
 
 let html = ``;
-
 
 
 function checkCorrect(e, isCorrect) {

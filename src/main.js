@@ -1,5 +1,6 @@
 import './style.css'
-import './lib/html.js'
+
+
 import data from '../data/index.json'
 
 let html = ``;
@@ -22,14 +23,13 @@ try {
   );
 
   for (let i = 0; i < validData.length; i++) {
-    html += `<li><a href="/pages/${validData[i].file.replace('.json', '.html')}">${validData[i].title.toUpperCase()}</a></li>`;
+    html += `<li><a href="/${validData[i].file.replace('.json', '.html')}">${validData[i].title.toUpperCase()}</a></li>`;
   }
 } catch {
   console.error('Ekki tókst að sækja gögn');
   html += `Gögn birtust ekki`;
 }
 
-let ld = ``
 
 document.querySelector('#app').innerHTML = `
   <main>
